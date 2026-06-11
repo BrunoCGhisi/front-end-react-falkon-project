@@ -1,16 +1,30 @@
-# React + Vite
+# Front-End Homework "Falkon ERP for Geek Products"
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Homework project from Front-End class of Software Engineering. Here we will work on a ERP for geek products, based in JsonDB and using MaterialUI for style. 
 
-Currently, two official plugins are available:
+## Working with:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Javascript
+* React
+* MaterialUI
+* JsonDB
 
-## React Compiler
+## Project requisiton:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Business Problem: Selling a product that is out of stock damages Falkon's reputation. The warehouse team needs a highly usable control panel to update physical inventory in real time.
 
-## Expanding the ESLint configuration
+### Create the following application:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+An inventory management screen with Big Numbers or modern data tables.
+Products with zero stock must have a critical visual indicator (red / Out of Stock).
+Products with 1 to 3 units in stock must display a Low Stock warning (yellow).
+Each product must include a link or button to "Adjust Stock".
+
+The Adjust Stock page is dedicated to updating the quantity of the selected product. It should include:
+
+Quick increment and decrement buttons (+ and -), or
+A numeric input field.
+
+When the user saves the changes, the product quantity must be updated directly in the database (db.json), and the user should be redirected back to the updated inventory list.
+
+
