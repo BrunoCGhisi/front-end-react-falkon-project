@@ -1,10 +1,10 @@
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-import { AppThemeProvider } from './shared/contexts'
+import { createRoot } from "react-dom/client";
 
-createRoot(document.getElementById('root')).render(
+import { AppThemeProvider } from "./shared/contexts";
+import { AppRouter } from "./router";
+
+createRoot(document.getElementById("root")).render(
     <AppThemeProvider>
-        <App />
+        <AppRouter />
     </AppThemeProvider>
-)
+);
