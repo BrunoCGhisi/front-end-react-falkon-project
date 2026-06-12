@@ -1,11 +1,18 @@
 
 import './App.css'
-import {Button} from "@mui/material";
+import {Button, ThemeProvider} from "@mui/material";
+import {DrawerMenu} from "./shared/components/menu/index.js";
+import {AppThemeProvider} from "./shared/contexts/AppThemeProvider.jsx";
 
 function App() {
   return (
     <>
-        <Button variant="contained">Contained</Button>
+        <AppThemeProvider>
+            <DrawerMenu />
+            <Button variant="contained">
+                Contained
+            </Button>
+        </AppThemeProvider>
     </>
   )
 }
