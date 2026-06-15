@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import DrawerMenu from "../shared/components/DrawerMenu";
+import DrawerMenu from "../shared/components/menu";
 
-import Produtos from "../pages/Produtos";
-import Pedidos from "../pages/Pedidos";
-import Cupons from "../pages/Cupons";
-import Usuarios from "../pages/Usuarios";
+import Produtos from "../pages/Produtos.jsx";
+import Pedidos from "../pages/Pedidos.jsx";
+import Cupons from "../pages/Cupons.jsx";
+import Usuarios from "../pages/Usuarios.jsx";
 
 export const AppRouter = () => {
     return (

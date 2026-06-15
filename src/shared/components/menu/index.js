@@ -1,1 +1,1 @@
-export { default as DrawerMenu } from "./DrawerMenu.jsx";
+export { default } from "./DrawerMenu.jsx";
