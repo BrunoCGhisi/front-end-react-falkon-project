@@ -7,8 +7,7 @@ import {
 } from "react";
 
 import { ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import Box from "@mui/material/Box";
+import { CssBaseline, GlobalStyles } from "@mui/material";
 
 import { DarkTheme, LightTheme } from "../themes";
 
@@ -45,14 +44,26 @@ export const AppThemeProvider = ({ children }) => {
             <ThemeProvider theme={theme}>
                 <CssBaseline />
 
-                <Box
-                    sx={{
-                        minHeight: "100vh",
-                        backgroundColor: theme.palette.background.default,
+                <GlobalStyles
+                    styles={{
+                        "::selection": {
+                            backgroundColor: theme.palette.primary.main,
+                            color: theme.palette.primary.contrastText,
+                        },
+
+                        "::-moz-selection": {
+                            backgroundColor: theme.palette.primary.main,
+                            color: theme.palette.primary.contrastText,
+                        },
+
+                        body: {
+                            backgroundColor:
+                            theme.palette.background.default,
+                        },
                     }}
-                >
-                    {children}
-                </Box>
+                />
+
+                {children}
             </ThemeProvider>
         </ThemeContext.Provider>
     );

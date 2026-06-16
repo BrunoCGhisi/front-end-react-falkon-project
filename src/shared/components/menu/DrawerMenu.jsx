@@ -141,7 +141,7 @@ export default function DrawerMenu({ children }) {
     };
 
     return (
-        <Box sx={{ display: "flex" }}>
+        <Box sx={{ display: "flex", width: "100%" }}>
             <CssBaseline />
 
             <AppBar position="fixed" open={open}>
@@ -227,9 +227,9 @@ export default function DrawerMenu({ children }) {
                 component="main"
                 sx={{
                     flexGrow: 1,
+                    minWidth: 0,
+                    overflow: "hidden",
                     p: 3,
-                    minHeight: "100vh",
-                    backgroundColor: "background.default",
                 }}
             >
                 <DrawerHeader />

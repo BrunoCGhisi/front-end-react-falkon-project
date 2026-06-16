@@ -3,7 +3,11 @@ import { DataGrid } from "@mui/x-data-grid";
 
 export default function CustomDataGrid({rows, columns, loading = false,}) {
     return (
-        <Box sx={{ height: 600, maxWidth: "100%" }}>
+        <Box sx={{
+            height: "60%",
+            width: "100%",
+            overflow: "hidden",
+       }}>
             <DataGrid
                 rows={rows}
                 columns={columns}
@@ -21,7 +25,7 @@ export default function CustomDataGrid({rows, columns, loading = false,}) {
                 initialState={{
                     pagination: {
                         paginationModel: {
-                            pageSize: 10,
+                            pageSize: 6,
                         },
                     },
                 }}
