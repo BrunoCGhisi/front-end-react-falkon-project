@@ -1,7 +1,7 @@
 import {TitleText, ButtonAction} from "./index.js";
 import Box from "@mui/material/Box";
 
-export default function TitleSection({
+export default function PageHeader({
                                          titleText,
                                          buttonText,
                                          IconName,
