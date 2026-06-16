@@ -2,6 +2,7 @@ import Typography from "@mui/material/Typography";
 
 import {CustomDataGrid} from "../shared/components/page";
 import { useApi } from "../shared/hooks/useApi";
+import Box from "@mui/material/Box";
 
 export default function Produtos() {
 
@@ -11,26 +12,23 @@ export default function Produtos() {
         {
             field: "nome",
             headerName: "Produto",
-            flex: 1,
-            maxWidth: 1000
+            flex: 5
         },
         {
             field: "categoria",
             headerName: "Categoria",
-            width: 150,
-            maxWidth: 150,
+            flex: 2
         },
         {
             field: "preco",
             headerName: "Preço",
-            width: 120,
-            maxWidth: 120
+            flex: 2
+
         },
         {
             field: "estoque",
             headerName: "Estoque",
-            width: 150,
-            maxWidth:150,
+            flex: 2,
             renderCell: (params) => {
 
                 if (params.value === 0) {
@@ -55,22 +53,25 @@ export default function Produtos() {
         {
             field: "nota",
             headerName: "Nota",
-            width: 100,
-            maxWidth: 150,
+            flex: 1,
+            maxWidth: 300
         },
     ];
 
     return (
         <>
-            <Typography variant="h4" mb={2}>
-                Produtos
-            </Typography>
+            <Box sx={{ ml: 3, width: "90%" }}>
+                <Typography variant="h4" mb={2}>
+                    Produtos
+                </Typography>
 
-            <CustomDataGrid
-                rows={data}
-                columns={columns}
-                loading={loading}
-            />
+                <CustomDataGrid
+                    rows={data}
+                    columns={columns}
+                    loading={loading}
+
+                />
+            </Box>
         </>
     );
 }

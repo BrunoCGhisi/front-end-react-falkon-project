@@ -3,7 +3,7 @@ import { DataGrid } from "@mui/x-data-grid";
 
 export default function CustomDataGrid({rows, columns, loading = false,}) {
     return (
-        <Box sx={{ height: 600, width: "95%" }}>
+        <Box sx={{ height: 600, maxWidth: "100%" }}>
             <DataGrid
                 rows={rows}
                 columns={columns}
