@@ -1,7 +1,6 @@
-import {CustomDataGrid, TitleSection} from "../shared/components/page";
 import { useApi } from "../shared/hooks/useApi";
-import Box from "@mui/material/Box";
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
+import {CustomDataGrid, TitleSection} from "../shared/components/page/index.js";
 
 export default function Produtos() {
 
