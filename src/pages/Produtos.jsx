@@ -1,8 +1,7 @@
-import Typography from "@mui/material/Typography";
-
-import {CustomDataGrid} from "../shared/components/page";
+import {CustomDataGrid, TitleSection} from "../shared/components/page";
 import { useApi } from "../shared/hooks/useApi";
 import Box from "@mui/material/Box";
+import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 
 export default function Produtos() {
 
@@ -19,7 +18,7 @@ export default function Produtos() {
         {
             field: "categoria",
             headerName: "Categoria",
-            flex: 2,
+            flex: 3,
             minWidth: 120,
 
         },
@@ -68,24 +67,20 @@ export default function Produtos() {
 
     return (
         <>
-            <Box sx={{
-                    width: "100%",
-                    maxWidth: "auto",
+            <TitleSection
+                titleText="Produtos"
+                buttonText="Adicionar"
+                IconName={AddCircleOutlineOutlinedIcon}
+                onButtonClick={() => {
+                    alert("Novo produto");
                 }}
-            >
-                <Typography variant="h4" sx={{
-                    mb: 2
-                }}>
-                    Produtos
-                </Typography>
+            />
 
-                <CustomDataGrid
-
-                    rows={data}
-                    columns={columns}
-                    loading={loading}
-                />
-            </Box>
+            <CustomDataGrid
+                rows={data}
+                columns={columns}
+                loading={loading}
+            />
         </>
     );
 }

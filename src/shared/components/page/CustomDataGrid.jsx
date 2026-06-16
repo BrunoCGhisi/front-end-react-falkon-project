@@ -4,7 +4,7 @@ import { DataGrid } from "@mui/x-data-grid";
 export default function CustomDataGrid({rows, columns, loading = false,}) {
     return (
         <Box sx={{
-            height: "60%",
+            height: "auto",
             width: "100%",
             overflow: "hidden",
        }}>
