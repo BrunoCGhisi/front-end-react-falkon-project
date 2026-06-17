@@ -1,0 +1,1 @@
+export { produtosService } from "./produtosService.js";

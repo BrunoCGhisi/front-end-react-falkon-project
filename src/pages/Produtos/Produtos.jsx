@@ -1,6 +1,6 @@
-import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
+import { useState } from "react";
 
-import { useApi } from "../../shared/hooks/useApi";
+import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 
 import {
     CustomDataGrid,
@@ -13,25 +13,87 @@ import {
 
 import ProdutoForm from "./ProdutoForm";
 
-import { getColumns } from "./columns.jsx";
+import { getColumns } from "./columns";
 
-import { useProdutos } from "./hooks/useProdutos.js";
+import { useProdutos } from "../../shared/hooks";
 
 export default function Produtos() {
-    const { data, loading } =
-        useApi("produtos");
 
     const {
-        openModal,
-        selectedProduct,
-        formData,
-        setFormData,
-        handleCreate,
-        handleEdit,
-        handleDelete,
-        handleClose,
-        handleSave,
+        produtos,
+        loading,
+        createProduto,
+        updateProduto,
+        deleteProduto,
     } = useProdutos();
+
+    const [openModal, setOpenModal] =
+        useState(false);
+
+    const [selectedProduct, setSelectedProduct] =
+        useState(null);
+
+    const emptyProduct = {
+        nome: "",
+        categoria: "",
+        preco: "",
+        estoque: "",
+        nota: "",
+    };
+
+    const [formData, setFormData] =
+        useState(emptyProduct);
+
+    const handleCreate = () => {
+
+        setSelectedProduct(null);
+
+        setFormData(emptyProduct);
+
+        setOpenModal(true);
+    };
+
+    const handleEdit = (row) => {
+
+        setSelectedProduct(row);
+
+        setFormData(row);
+
+        setOpenModal(true);
+    };
+
+    const handleDelete = async (row) => {
+
+        const confirmed =
+            window.confirm(
+                `Deseja excluir ${row.nome}?`
+            );
+
+        if (!confirmed) {
+            return;
+        }
+
+        await deleteProduto(row.id);
+    };
+
+    const handleSave = async () => {
+
+        if (selectedProduct) {
+
+            await updateProduto(
+                selectedProduct.id,
+                formData
+            );
+
+        } else {
+
+            await createProduto(
+                formData
+            );
+        }
+
+        setOpenModal(false);
+    };
 
     const columns = getColumns(
         handleEdit,
@@ -43,12 +105,14 @@ export default function Produtos() {
             <TitleSection
                 titleText="Produtos"
                 buttonText="Adicionar"
-                IconName={AddCircleOutlineOutlinedIcon}
+                IconName={
+                    AddCircleOutlineOutlinedIcon
+                }
                 onButtonClick={handleCreate}
             />
 
             <CustomDataGrid
-                rows={data}
+                rows={produtos}
                 columns={columns}
                 loading={loading}
             />
@@ -60,7 +124,9 @@ export default function Produtos() {
                         ? "Editar Produto"
                         : "Novo Produto"
                 }
-                onClose={handleClose}
+                onClose={() =>
+                    setOpenModal(false)
+                }
                 onSave={handleSave}
             >
                 <ProdutoForm

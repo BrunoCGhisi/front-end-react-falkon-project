@@ -5,52 +5,68 @@ export default function ProdutoForm({
                                         formData,
                                         setFormData,
                                     }) {
-    const handleChange = (field) => (event) => {
-        setFormData((old) => ({
-            ...old,
-            [field]: event.target.value,
-        }));
-    };
-
     return (
         <Stack spacing={2} mt={1}>
+
             <TextField
                 label="Nome"
-                fullWidth
                 value={formData.nome}
-                onChange={handleChange("nome")}
+                onChange={(e) =>
+                    setFormData({
+                        ...formData,
+                        nome: e.target.value,
+                    })
+                }
             />
 
             <TextField
                 label="Categoria"
-                fullWidth
                 value={formData.categoria}
-                onChange={handleChange("categoria")}
+                onChange={(e) =>
+                    setFormData({
+                        ...formData,
+                        categoria:
+                        e.target.value,
+                    })
+                }
             />
 
             <TextField
                 label="Preço"
-                type="number"
-                fullWidth
                 value={formData.preco}
-                onChange={handleChange("preco")}
+                onChange={(e) =>
+                    setFormData({
+                        ...formData,
+                        preco:
+                        e.target.value,
+                    })
+                }
             />
 
             <TextField
                 label="Estoque"
-                type="number"
-                fullWidth
                 value={formData.estoque}
-                onChange={handleChange("estoque")}
+                onChange={(e) =>
+                    setFormData({
+                        ...formData,
+                        estoque:
+                        e.target.value,
+                    })
+                }
             />
 
             <TextField
                 label="Nota"
-                type="number"
-                fullWidth
                 value={formData.nota}
-                onChange={handleChange("nota")}
+                onChange={(e) =>
+                    setFormData({
+                        ...formData,
+                        nota:
+                        e.target.value,
+                    })
+                }
             />
+
         </Stack>
     );
 }
