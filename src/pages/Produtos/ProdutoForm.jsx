@@ -1,12 +1,12 @@
-import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import {Grid} from "@mui/material";
 
 export default function ProdutoForm({ formData, setFormData }) {
     return (
         <Grid container spacing={2}>
-            <Grid size={{ xs: 12, md: 6 }}>
+            <Grid size={{ xs: 12, md: 12 }}>
             <TextField
+                fullWidth
                 label="Nome"
                 value={formData.nome}
                 onChange={(e) =>
@@ -17,8 +17,9 @@ export default function ProdutoForm({ formData, setFormData }) {
                 }
             />
             </Grid>
-            <Grid size={{ xs: 12, md: 6 }}>
+            <Grid size={{ xs: 12, md: 9 }}>
             <TextField
+                fullWidth
                 label="Categoria"
                 value={formData.categoria}
                 onChange={(e) =>
@@ -31,8 +32,9 @@ export default function ProdutoForm({ formData, setFormData }) {
             />
             </Grid>
 
-                <Grid size={{ xs: 12, md: 6 }}>
+                <Grid size={{ xs: 12, md: 3 }}>
             <TextField
+                fullWidth
                 label="Preço"
                 value={formData.preco}
                 onChange={(e) =>
@@ -47,7 +49,9 @@ export default function ProdutoForm({ formData, setFormData }) {
 
                     <Grid size={{ xs: 12, md: 6 }}>
             <TextField
+                fullWidth
                 label="Estoque"
+                type="number"
                 value={formData.estoque}
                 onChange={(e) =>
                     setFormData({
@@ -61,6 +65,7 @@ export default function ProdutoForm({ formData, setFormData }) {
 
                         <Grid size={{ xs: 12, md: 6 }}>
             <TextField
+                fullWidth
                 label="Nota"
                 value={formData.nota}
                 onChange={(e) =>
@@ -70,8 +75,7 @@ export default function ProdutoForm({ formData, setFormData }) {
                         e.target.value,
                     })
                 }
-            />
-                        </Grid>
+            /></Grid>
         </Grid>
 
     );

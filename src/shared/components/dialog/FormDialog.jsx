@@ -7,6 +7,8 @@ import {
     DialogActions,
     Button,
 } from "@mui/material";
+import {TitleText} from "../typoGraphs/index.js";
+import {ButtonAction} from "../buttons/index.js";
 
 export default function FormDialog({open, title, children, onClose, onSave }) {
     return (
@@ -14,10 +16,14 @@ export default function FormDialog({open, title, children, onClose, onSave }) {
             open={open}
             onClose={onClose}
             fullWidth
-            maxWidth="lg"
+            maxWidth="md"
         >
             <DialogTitle>
-                {title}
+                <TitleText
+                    titleText={title}
+                    variant="h5"
+                    sx={{ mb: 0 }}
+                />
             </DialogTitle>
 
             <DialogContent dividers>
@@ -29,12 +35,8 @@ export default function FormDialog({open, title, children, onClose, onSave }) {
                     Cancelar
                 </Button>
 
-                <Button
-                    variant="contained"
-                    onClick={onSave}
-                >
-                    Salvar
-                </Button>
+                <ButtonAction onClick={onSave} buttonText={"Registrar"} />
+
             </DialogActions>
         </Dialog>
     );
