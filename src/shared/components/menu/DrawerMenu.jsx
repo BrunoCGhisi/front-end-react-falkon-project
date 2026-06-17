@@ -156,7 +156,11 @@ export default function DrawerMenu({ children }) {
         <Box sx={{ display: "flex", width: "100%" }}>
             <CssBaseline />
 
-            <AppBar position="fixed" open={open}>
+            <AppBar
+                position="fixed"
+                open={open}
+                color="inherit"
+            >
                 <Toolbar>
                     {!open && (
                         <IconButton

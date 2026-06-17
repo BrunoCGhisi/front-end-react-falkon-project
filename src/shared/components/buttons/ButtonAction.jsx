@@ -7,9 +7,12 @@ export default function ButtonAction({
                                      }) {
     return (
         <Button
-            variant="outlined"
             color="primary"
-            startIcon={IconName ? <IconName /> : null}
+            startIcon={
+                IconName
+                    ? <IconName />
+                    : null
+            }
             onClick={onClick}
         >
             {buttonText}

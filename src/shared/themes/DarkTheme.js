@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material";
-import { brown, yellow} from "@mui/material/colors";
+import { brown, yellow } from "@mui/material/colors";
 
 
 export const DarkTheme = createTheme({
@@ -7,12 +7,19 @@ export const DarkTheme = createTheme({
         mode: "dark",
         primary: {
             main: yellow["A400"],
-            optional: brown["800"]
+            optional: yellow["700"]
         },
 
         background: {
             default: "#121212",
             paper: "#1E1E1E",
+        },
+    },
+    components: {
+        MuiButton: {
+            defaultProps: {
+                variant: "outlined",
+            },
         },
     },
 });

@@ -1,18 +1,28 @@
-import { createTheme } from "@mui/material";
-import {amber, yellow} from "@mui/material/colors";
+import {amber, brown, yellow} from "@mui/material/colors";
+import {createTheme} from "@mui/material";
 
 export const LightTheme = createTheme({
     palette: {
         mode: "light",
 
         primary: {
-            main: yellow["A400"],
-            optional: amber["A200"]
+            main: amber["500"],
+            contrastText: "#000000",
+            optional: yellow["300"]
         },
 
         background: {
             default: "#F5F5F5",
             paper: "#FFFFFF",
+        },
+    },
+
+    components: {
+        MuiButton: {
+            defaultProps: {
+                variant: "contained",
+                color: "primary",
+            },
         },
     },
 });
