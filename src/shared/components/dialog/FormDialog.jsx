@@ -8,13 +8,7 @@ import {
     Button,
 } from "@mui/material";
 
-export default function FormDialog({
-                                       open,
-                                       title,
-                                       children,
-                                       onClose,
-                                       onSave,
-                                   }) {
+export default function FormDialog({open, title, children, onClose, onSave }) {
     return (
         <Dialog
             open={open}

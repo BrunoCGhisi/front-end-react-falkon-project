@@ -22,7 +22,6 @@ export default function CustomDataGrid({rows, columns, loading = false,}) {
                         fontWeight: 700,
                     },
 
-
                     "& .MuiTablePagination-selectIcon": {
                         color: "primary.main",
                     },

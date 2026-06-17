@@ -2,10 +2,7 @@ import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import {Grid} from "@mui/material";
 
-export default function ProdutoForm({
-                                        formData,
-                                        setFormData,
-                                    }) {
+export default function ProdutoForm({ formData, setFormData }) {
     return (
         <Grid container spacing={2}>
             <Grid size={{ xs: 12, md: 6 }}>
