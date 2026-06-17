@@ -16,6 +16,8 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 
 import Inventory2Icon from "@mui/icons-material/Inventory2";
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
@@ -27,7 +29,10 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 
+import { useAppThemeContext } from "../../contexts";
+
 const drawerWidth = 240;
+
 
 const menuItems = [
     {
@@ -126,11 +131,18 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 export default function DrawerMenu({ children }) {
+
+
     const theme = useTheme();
 
     const navigate = useNavigate();
 
     const [open, setOpen] = React.useState(true);
+
+    const {
+        themeName,
+        toggleTheme,
+    } = useAppThemeContext();
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -168,6 +180,19 @@ export default function DrawerMenu({ children }) {
                     >
                         Falkon ERP
                     </Typography>
+
+                    <Box sx={{ flexGrow: 1 }} />
+
+                    <IconButton
+                        color="primary"
+                        onClick={toggleTheme}
+                    >
+                        {
+                            themeName === "darkTheme"
+                                ? <LightModeOutlinedIcon />
+                                : <DarkModeOutlinedIcon />
+                        }
+                    </IconButton>
                 </Toolbar>
             </AppBar>
 
