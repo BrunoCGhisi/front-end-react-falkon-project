@@ -1,11 +1,13 @@
 import { createTheme } from "@mui/material";
+import {amber, yellow} from "@mui/material/colors";
 
 export const LightTheme = createTheme({
     palette: {
         mode: "light",
 
         primary: {
-            main: "#FFD600",
+            main: yellow["A400"],
+            optional: amber["A200"]
         },
 
         background: {

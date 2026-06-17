@@ -15,11 +15,20 @@ export default function CustomDataGrid({rows, columns, loading = false,}) {
                 pageSizeOptions={[5, 10, 20]}
                 sx={{
                     "& .MuiDataGrid-columnHeader": {
-                        color: "primary.main"
+                        backgroundColor: "primary.optional",
                     },
 
                     "& .MuiDataGrid-columnHeaderTitle": {
                         fontWeight: 700,
+                    },
+
+
+                    "& .MuiTablePagination-selectIcon": {
+                        color: "primary.main",
+                    },
+
+                    "& .MuiTablePagination-actions button": {
+                        color: "primary.main",
                     },
                 }}
                 initialState={{

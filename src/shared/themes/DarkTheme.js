@@ -1,11 +1,13 @@
 import { createTheme } from "@mui/material";
+import { brown, yellow} from "@mui/material/colors";
+
 
 export const DarkTheme = createTheme({
     palette: {
         mode: "dark",
-
         primary: {
-            main: "#FFD600",
+            main: yellow["A400"],
+            optional: brown["800"]
         },
 
         background: {

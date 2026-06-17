@@ -20,13 +20,13 @@ export default function FormDialog({
             open={open}
             onClose={onClose}
             fullWidth
-            maxWidth="md"
+            maxWidth="lg"
         >
             <DialogTitle>
                 {title}
             </DialogTitle>
 
-            <DialogContent>
+            <DialogContent dividers>
                 {children}
             </DialogContent>
 

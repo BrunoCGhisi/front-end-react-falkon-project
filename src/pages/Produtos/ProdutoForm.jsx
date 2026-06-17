@@ -1,13 +1,14 @@
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
+import {Grid} from "@mui/material";
 
 export default function ProdutoForm({
                                         formData,
                                         setFormData,
                                     }) {
     return (
-        <Stack spacing={2} mt={1}>
-
+        <Grid container spacing={2}>
+            <Grid size={{ xs: 12, md: 6 }}>
             <TextField
                 label="Nome"
                 value={formData.nome}
@@ -18,7 +19,8 @@ export default function ProdutoForm({
                     })
                 }
             />
-
+            </Grid>
+            <Grid size={{ xs: 12, md: 6 }}>
             <TextField
                 label="Categoria"
                 value={formData.categoria}
@@ -30,7 +32,9 @@ export default function ProdutoForm({
                     })
                 }
             />
+            </Grid>
 
+                <Grid size={{ xs: 12, md: 6 }}>
             <TextField
                 label="Preço"
                 value={formData.preco}
@@ -42,7 +46,9 @@ export default function ProdutoForm({
                     })
                 }
             />
+                </Grid>
 
+                    <Grid size={{ xs: 12, md: 6 }}>
             <TextField
                 label="Estoque"
                 value={formData.estoque}
@@ -54,7 +60,9 @@ export default function ProdutoForm({
                     })
                 }
             />
+                    </Grid>
 
+                        <Grid size={{ xs: 12, md: 6 }}>
             <TextField
                 label="Nota"
                 value={formData.nota}
@@ -66,7 +74,8 @@ export default function ProdutoForm({
                     })
                 }
             />
+                        </Grid>
+        </Grid>
 
-        </Stack>
     );
 }
